@@ -14,9 +14,9 @@ r0 = np.linspace(10, 350, npts)  # Partikelradiusbereich in nm
 lam = np.linspace(250, 1250, npts)  # Wellenlängenbereich in nm
 
 # Importieren der Lorentz-Drude-Modellparameter
-model_data = pd.read_excel('LDdata2.xlsx', index_col=0)
+model_data = pd.read_excel('LDdata_au.xlsx', index_col=0)
 # Filtern der Parameter für Silicium
-model_params = np.array(model_data["Si"])
+model_params = np.array(model_data["Au2"])
 model_params = model_params[~np.isnan(model_params)]
 params = Parameters()
 
@@ -82,4 +82,4 @@ ax.grid(False)
 ax.set_xlabel(r'$r_0\,/\,$nm')
 ax.set_ylabel(r'$\lambda\,/\,$nm')
 
-fig.savefig("Q_sca_Si.png") 
+fig.savefig("Q_sca_Au.png") 

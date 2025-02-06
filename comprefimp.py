@@ -2,10 +2,13 @@
 import urllib.request as urllib2
 import numpy as np
 from io import StringIO
+import matplotlib.pyplot as plt
 import callplotfit
 # Query the website
 
 response = urllib2.urlopen('https://refractiveindex.info/database/data/main/Si/Schinke.yml')
+#response = urllib2.urlopen('https://refractiveindex.info/database/data/main/Au/Babar.yml')
+#response = urllib2.urlopen('https://refractiveindex.info/database/data/main/Ag/Babar.yml')
 
 # Read the response. Response is in YAML format. Will use PyYAML parser,
 yaml_data = response.read()
@@ -34,9 +37,12 @@ wave_micron, n, k  = np.genfromtxt(StringIO(cleaned_nk), unpack=True)
 
 wave_exp = wave_micron * 1000 # Convert wavelength from microns to nm
 eps_exp = (n + 1j* k)**2  # Convert n,k into dielectric function
-print(eps_exp)
+#print(eps_exp)
 # Lets convert wavelengh in nm to eV and assign it to 'w' 
 h = 4.135667516E-15 # plancks's constant in eV-sec
 c = 299792458E9 # speed of light in vacuum in nm/sec
 w_exp = h*c/wave_exp;  # Convert wavleength in nm to eV
-callplotfit.plot_fit(w_exp,eps_exp)
+# plt.plot(wave_exp,n);
+# plt.plot(wave_exp,k);
+# plt.show();
+callplotfit.plot_fit(w_exp,eps_exp) 

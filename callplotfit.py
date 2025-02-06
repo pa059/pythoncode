@@ -7,7 +7,7 @@ def plot_fit(w_exp,eps_exp, w_for_fit = None,eps_fit_result = None):
     This functions plots the experimental dielectric function as function of wavelength.
     If fitted model data is available it will also plot it
     '''
-    print("in")
+    #print("in")
     rcParams.update({'font.size': 18}) # Increase the font size
     rcParams['mathtext.default']='regular' # make the mathtext the same size of normal text for better readbility
     
@@ -40,4 +40,4 @@ def plot_fit(w_exp,eps_exp, w_for_fit = None,eps_fit_result = None):
             x_yaxis.set_major_formatter(ScalarFormatter())
             
     fig.tight_layout()
-    fig.savefig("evplot.png")
+    fig.savefig("evplot_si.png")
