@@ -1,15 +1,3 @@
-"""
-Bachelorthesis
-Titel: Berechnung einer Metaoberfläche mit fokussierenden Eigenschaften auf Basis der Mie-Theorie
-Autor: Torben Hespe
-Matrikel-Nr.: 5010294
-Erstprüfer: Prof. Dr. C. Reinhardt
-Zweitprüfer: Dr. D. Hilbig
-Hochschule Bremen
-Bearbeitungszeitraum: 29.03.2021 - 31.05.2021
-
-Datei zur Berechnung des elektrischen Feldes der Linse
-"""
 
 # Bibliotheken einbinden
 import numpy as np
